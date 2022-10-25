@@ -15,7 +15,36 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello</h1>
+      <div class="weather">
+        <form>
+          <div class="row">
+            <div class="col-9">
+              <input type="search" placeholder="Search for a city" class="form-control form-control-lg" id="search-city-form">
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="form-control-lg btn btn-primary" id="search-city-btn">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <h1>Dallas</h1>
+          <ul class="li">
+            Tuesday 4:14 PM
+          </ul>
+          <ul class="li">
+            Humidity: 28%
+          </ul>
+          <ul>
+            Wind: 13 mph
+          </ul>
+        </div>
+        <div class="col-6">
+          <span class="current-temp">70</span>° F
+        </div>
+      </div>
+      <small><a href="https://github.com/atrev5/weather-app" target="_blank">Open-source code</a> by Alexandria Trevino</small>
     </div>
     <script src="src/app.js"></script>
   </body>
