@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
   </head>
   <body>
     <div class="container">
@@ -43,18 +42,26 @@
             <div class="col-6">
               <h1 id="city"></h1>
               <ul>
-                <li><span id="description">
+                <li>
+                  <span id="description"> </span>,
+                  <span id="date">Tuesday 4:11 PM</span>
+                </li>
 
-                </span>, <span id="date">Tuesday 4:11 PM</span></li>
-          
-
-                <li>Humidity: <span id="humidity">28</span>%, Wind: <span id="wind">13</span> mph</li>
+                <li>
+                  Humidity: <span id="humidity">28</span>%, Wind:
+                  <span id="wind">13</span> mph
+                </li>
 
                 <li></li>
               </ul>
             </div>
-            <div class="col-6 d-flex">
-              <img src="" id="icon" /><span class="current-temp" id="temperature"></span><span class="units">° F</span></div>
+            <div class="col-6 d-flex justify-content-end">
+              <img src="" id="icon" /><span
+                class="current-temp"
+                id="temperature"
+              ></span
+              ><span class="units">° F</span>
+            </div>
           </div>
         </div>
         <small
