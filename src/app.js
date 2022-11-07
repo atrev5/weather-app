@@ -23,6 +23,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
+  console.log(response.data.condition.icon_url);
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
@@ -37,10 +38,13 @@ function displayTemperature(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
+  document
+    .querySelector("#icon")
+    .setAttribute("src", response.data.condition.icon_url);
 }
 
 let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
-let query = "Dallas";
+let query = "amarillo";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=imperial`;
 
 axios.get(apiUrl).then(displayTemperature);
