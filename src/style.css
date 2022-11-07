@@ -4,55 +4,51 @@ body {
 }
 
 h1 {
-    color: #363b4e;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1;
-    margin: 10px 0;
+  color: #363b4e;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 10px 0;
 }
 
 small {
-    padding: 20px;
-    color: #878787;
+  padding: 20px;
+  color: #878787;
 }
 ul {
-    color: #878787;
-    font-size: 14px;
-    list-style: none;
-    padding: 0;
-    text-transform: capitalize;
+  color: #878787;
+  font-size: 14px;
+  list-style: none;
+  padding: 0;
+  text-transform: capitalize;
 }
 
-a {
-    text-decoration: none;
-    color: #878787;
+a.unit-links{
+  text-decoration: none;
+  color: #878787;
 }
 
-a:hover {
-    color: #878787;
-}
-
-.current-details .active-link {
+a.active-link {
     color: #363b4e;
+}
+
+a.active-link:hover {
     cursor: default;
 }
 
-.current-details .active-link:hover {
-    text-decoration: none;
-}
 .current-details {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .current-temp {
-    color: #363b4e;
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 1;
+  color: #363b4e;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .units {
-    font-size: 20px;
-    line-height: 3.5;
+  font-size: 20px;
+  line-height: 3.5;
 }
 
 .weather-app-wrapper {
