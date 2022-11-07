@@ -18,14 +18,15 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form>
+          <form id="search-form">
             <div class="row">
               <div class="col-9">
                 <input
                   type="search"
                   placeholder="Search for a city"
                   class="form-control form-control-lg"
-                  id="search-city-form"
+                  autocomplete="off"
+                  id="search-city"
                 />
               </div>
               <div class="col-3">
@@ -33,7 +34,7 @@
                   type="submit"
                   value="Search"
                   class="form-control-lg btn btn-primary"
-                  id="search-city-btn"
+                  id="search-city-submit"
                 />
               </div>
             </div>
@@ -56,7 +57,7 @@
               </ul>
             </div>
             <div class="col-6 d-flex justify-content-end">
-              <img src="" id="icon" /><span
+              <img src="" alt="" id="icon" /><span
                 class="current-temp align-self-center"
                 id="temperature"
               ></span

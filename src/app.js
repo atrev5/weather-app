@@ -41,10 +41,27 @@ function displayTemperature(response) {
   document
     .querySelector("#icon")
     .setAttribute("src", response.data.condition.icon_url);
+    document
+      .querySelector("#icon")
+      .setAttribute("alt", response.data.condition.description);
 }
 
-let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
-let query = "amarillo";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=imperial`;
+function search(city) {
+    let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
+   
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+    
+    axios.get(apiUrl).then(displayTemperature);
 
-axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#search-city");
+    search(searchInput.value);
+}
+
+search("Amarillo");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
