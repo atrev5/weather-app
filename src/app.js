@@ -58,6 +58,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city");
   search(searchInput.value);
+  celsiusLink.classList.remove("active-link");
+  fahrenheitLink.classList.add("active-link");
 }
 
 function displayCelsiusTemperature(event) {
