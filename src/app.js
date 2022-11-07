@@ -61,7 +61,7 @@ function handleSubmit(event) {
     search(searchInput.value);
 }
 
-search("Amarillo");
+search("Dallas");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
