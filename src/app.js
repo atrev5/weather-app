@@ -21,6 +21,12 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minute}`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   fahrenheitTemperature = response.data.temperature.current;
 
@@ -44,9 +50,12 @@ function displayTemperature(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
+
+    getForecast(response.data.coordinates);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data)
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row d-flex justify-content-between">`;
@@ -69,7 +78,6 @@ function displayForecast() {
 
 function search(city) {
   let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
-
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(displayTemperature);
@@ -112,4 +120,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Dallas");
-displayForecast();
