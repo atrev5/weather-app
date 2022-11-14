@@ -70,11 +70,11 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col-sm-2">
                 <div class="forecast-date"> ${formatDay(
                   forecastDay.time
                 )} </div>
-                <img src="${forecastDay.condition.icon_url}" alt="" id="${
+                <img src="${forecastDay.condition.icon_url}" alt="${
           forecastDay.condition.icon
         }" />
                 <span class="forecast-max">${Math.round(
