@@ -1,10 +1,10 @@
 body {
-  background: #d6c8ff;
+  background: #c3bef0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
-  color: #170a19;
+  color: #000000;
   font-size: 36px;
   font-weight: 700;
   line-height: 1;
@@ -24,7 +24,11 @@ ul {
 }
 
 a {
-  color: #7e6bc4;
+  color: #430f58;
+}
+
+a:hover {
+  color: #430f58;
 }
 
 .city-search {
@@ -36,7 +40,7 @@ a {
   margin: 40px 0;
 }
 .current-temp {
-  color: #170a19;
+  color: #000000;
   font-size: 80px;
   font-weight: 600;
   line-height: 1;
@@ -49,7 +53,8 @@ a {
 
 .forecast-max {
   font-size: 14px;
-  color: #363b4e;
+  color: #6643b5;
+  font-weight: bold;
 }
 
 .forecast-min {
@@ -58,7 +63,7 @@ a {
 }
 
 .search-btn {
-  background: #7e6bc4;
+  background: #6643b5;
   color: #ffffff;
   font-size: 14px;
   padding: 13px;
@@ -73,9 +78,14 @@ a {
   margin-top: 30px;
 }
 
+.temp-info {
+  color: #6643b5;
+}
+
 .units {
   font-size: 20px;
   line-height: 3.5;
+  color: #000000;
 }
 
 .weather-app-wrapper {
