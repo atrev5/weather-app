@@ -103,36 +103,11 @@ function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city");
   search(searchInput.value);
-  celsiusLink.classList.remove("active-link");
-  fahrenheitLink.classList.add("active-link");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active-link");
-  celsiusLink.classList.add("active-link");
-  let temperatureElement = document.querySelector("#temperature");
-  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active-link");
-  fahrenheitLink.classList.add("active-link");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let fahrenheitTemperature = null;
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Dallas");
