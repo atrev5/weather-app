@@ -51,25 +51,41 @@ function displayTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
 
-    getForecast(response.data.coordinates);
+  getForecast(response.data.coordinates);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 function displayForecast(response) {
-  console.log(response.data)
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row d-flex justify-content-between">`;
-  let days = ["Mon", "Tues", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-                <div class="forecast-date"> ${day} </div>
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png" alt="" id="icon" />
-                <span class="forecast-max">40°</span>
-                <span class="forecast-min">34°</span>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+                <div class="forecast-date"> ${formatDay(
+                  forecastDay.time
+                )} </div>
+                <img src="${forecastDay.condition.icon_url}" alt="" id="${
+          forecastDay.condition.icon
+        }" />
+                <span class="forecast-max">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</span>
+                <span class="forecast-min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}°</span>
                 
               </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
