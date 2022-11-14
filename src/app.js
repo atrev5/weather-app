@@ -46,6 +46,27 @@ function displayTemperature(response) {
     .setAttribute("alt", response.data.condition.description);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row d-flex justify-content-between">`;
+  let days = ["Mon", "Tues", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <div class="forecast-date"> ${day} </div>
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png" alt="" id="icon" />
+                <span class="forecast-max">40°</span>
+                <span class="forecast-min">34°</span>
+                
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let apiKey = "c143btabf6ob4a5faf5033a73eae142a";
 
@@ -91,3 +112,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Dallas");
+displayForecast();
