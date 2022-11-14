@@ -10,15 +10,22 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  let hour = date.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minute = date.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-  return `${day} ${hour}:${minute}`;
+  // let hour = date.getHours();
+  // if (hour < 10) {
+  //   hour = `0${hour}`;
+  // }
+  // let minute = date.getMinutes();
+  // if (minute < 10) {
+  //   minute = `0${minute}`;
+  // }
+
+  let time = date.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    })
+  
+  return `${day} ${time}`;
 }
 
 function getForecast(coordinates) {
