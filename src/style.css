@@ -33,7 +33,7 @@ a {
 }
 
 .current-details {
-  margin-top: 30px;
+  margin: 40px 0;
 }
 .current-temp {
   color: #170a19;
@@ -69,6 +69,10 @@ a {
   color: white;
 }
 
+.search-for-city {
+  margin-top: 30px;
+}
+
 .units {
   font-size: 20px;
   line-height: 3.5;
@@ -87,6 +91,6 @@ a {
 }
 
 .weather-forecast {
-  margin-top: 30px;
+  margin: 40px 0;
   text-align: center;
 }
