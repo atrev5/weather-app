@@ -64,6 +64,11 @@ a {
   padding: 13px;
 }
 
+.search-btn:hover {
+  background: #7e6bc4;
+  color: white;
+}
+
 .units {
   font-size: 20px;
   line-height: 3.5;
